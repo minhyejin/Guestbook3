@@ -31,15 +31,15 @@ public class GuestbookController {
 	}
 	
 
-	@RequestMapping(value = "/deleteform", method = RequestMethod.POST)
+	@RequestMapping(value = "/deleteform", method = RequestMethod.GET)
 	public String deleteform(@RequestParam("no") int no, Model model) {
-		System.out.println("delete 진입");
+		System.out.println("deleteform 진입");
 		
 		model.addAttribute("no", no);
 		return "deleteform";
 	}
 
-	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(@ModelAttribute GuestbookVo guestbookVo,
 						 @RequestParam("no") int no, 
 						 @RequestParam("password") String password) {
