@@ -12,7 +12,7 @@
 
 	
 
-	<form method="get" action="/guestbook3/delete">
+	<form method="post" action="/guestbook3/delete">
 	<input type='text' name="no" value="${requestScope.no }"> 
 	<table>
 		<tr>

@@ -29,7 +29,6 @@ public class GuestbookController {
 		
 		return "list";
 	}
-	
 
 	@RequestMapping(value = "/deleteform", method = RequestMethod.GET)
 	public String deleteform(@RequestParam("no") int no, Model model) {
@@ -39,7 +38,7 @@ public class GuestbookController {
 		return "deleteform";
 	}
 
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public String delete(@ModelAttribute GuestbookVo guestbookVo,
 						 @RequestParam("no") int no, 
 						 @RequestParam("password") String password) {
@@ -48,7 +47,7 @@ public class GuestbookController {
 		
 		return "redirect:/list";
 	}
-	@RequestMapping(value = "/insert", method = RequestMethod.GET)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(@ModelAttribute GuestbookVo guestbookVo) {
 		System.out.println(guestbookVo.toString());
 		
